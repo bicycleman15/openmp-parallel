@@ -3,13 +3,13 @@
 import sys
 import numpy as np
 
-with open("input.txt", "r") as f:
+with open("tests/input_2000.txt", "r") as f:
 	A = f.read()
 
-with open("output_L.txt", "r") as f:
+with open("outputs/output_L.txt", "r") as f:
 	L = f.read()
 
-with open("output_U.txt", "r") as f:
+with open("outputs/output_U.txt", "r") as f:
 	U = f.read()
 
 
@@ -24,6 +24,10 @@ def convert2numpy(mat):
 	return np.array(mat).astype(np.double)
 
 A, L, U = (convert2numpy(x) for x in (A,L,U))
+
+print(A.shape)
+print(L.shape)
+print(U.shape)
 
 # print(A)
 
