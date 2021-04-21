@@ -32,15 +32,13 @@ void crout_0(double **A, double **L, double **U, int n, int no_threads) {
 }
 
 void crout_1(double **A, double **L, double **U, int n, int no_threads) {
-
-    omp_set_num_threads(no_threads);
     
 	for (int i = 0; i < n; i++) {
 		U[i][i] = 1;
 	}
 	for (int j = 0; j < n; j++) {
 
-        #pragma omp parallel for
+        #pragma omp parallel for num_threads(no_threads)
 		for (int i = j; i < n; i++) {
 			double sum = 0;
 			for (int k = 0; k < j; k++) {
@@ -49,7 +47,7 @@ void crout_1(double **A, double **L, double **U, int n, int no_threads) {
 			L[i][j] = A[i][j] - sum;
 		}
 
-        #pragma omp parallel for
+        #pragma omp parallel for num_threads(no_threads)
 		for (int i = j; i < n; i++) {
 			double sum = 0;
 			for(int k = 0; k < j; k++) {
