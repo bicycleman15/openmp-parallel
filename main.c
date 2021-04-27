@@ -27,10 +27,10 @@ int main() {
 
 	// print_matrix(A, N); printf("\n");
     
-    // crout_0(A,L,U,N, num_threads);
-    // crout_1(A,L,U,N, num_threads);
-    crout_2(A,L,U,N, num_threads);
-    // crout_3(A,L,U,N, num_threads);
+    // crout_0(A,L,U,N, num_threads);   //48s
+    crout_1(A,L,U,N, num_threads);   //26s  
+    // crout_2(A,L,U,N, num_threads);   //38s
+    // crout_3(A,L,U,N, num_threads);   //42s
 
 	// print_matrix(L, N); printf("\n");
 	// print_matrix(U, N); printf("\n");

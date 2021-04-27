@@ -28,3 +28,9 @@ void clear_matrix(double **A, int N) {
         }
     }
 }
+
+void clear_matrix2(double *A, int N) {
+    for(int i = 0; i < N; ++i){
+        A[i] = 0;
+    }
+}
