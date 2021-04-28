@@ -26,6 +26,11 @@ int main(int argc, char *argv[]) {
     A = malloc(N*N*sizeof(double));
     L = malloc(N*N*sizeof(double));
     U = malloc(N*N*sizeof(double));
+    for(int i = 0; i < N*N; ++i){
+        A[i] = 0;
+        L[i] = 0;
+        U[i] = 0;
+    }
 
     double **_L,**_U;    
 
