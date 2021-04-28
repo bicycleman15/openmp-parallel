@@ -17,8 +17,9 @@ Strategy 2: Here we add 2 parallel sections inside the outermost loop so that th
 
 Strategy 3: This combines strategy 1 and 2 in one strategy. While the 2 nested loops run in parallel, each iteration of the nested loop is also parallel.
 
-Strategy 4: Open MPI
-@Siddharth
+Strategy 4: In this approach we distribute the load in the two inner loops across processes. Array A is broadcasted to all processes and for the first 
+            inner loop, U is broadcasted and parts of L to update are distributed equally among processes. Similarly, L is broadcasted and U is distributed
+            in the second inner loop.
 
 
 Removing Data Races
